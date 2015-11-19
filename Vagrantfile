@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "openproject" do |openproject|
     openproject.vm.provider 'docker' do |d|
-      d.image = 'abevoelker/openproject'
+      d.image = 'progtologist/openproject'
       d.name  = 'openproject'
       d.cmd   = ['/var/www/openproject/docker/scripts/start_application.sh']
       d.ports = ['8080:80']
