@@ -1,4 +1,4 @@
-FROM       abevoelker/ruby
+FROM       abevoelker/ruby:old
 MAINTAINER Abe Voelker <abe@abevoelker.com>
 
 # Set up application user 'openproject' and check out source
