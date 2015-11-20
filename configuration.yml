@@ -102,14 +102,14 @@
 # default configuration options for all environments
 default:
   # Outgoing emails configuration (see examples above)
-  email_delivery_method: :smtp
-  smtp_address: smtp.gmail.net
+  email_delivery_method: "smtp"
+  smtp_enable_starttls_auto: true
+  smtp_address: "smtp.gmail.com"
   smtp_port: 587
-  smtp_domain: smtp.gmail.com
-  smtp_authentication: plain
+  smtp_domain: "smtp.gmail.com"
+  smtp_authentication: :plain
   smtp_user_name: <%= ENV['GMAIL_USERNAME'] %>
   smtp_password: <%= ENV['GMAIL_PASSWORD'] %>
-  smtp_enable_starttls_auto: true
 
   # Prefix to the url-path. This path is then prepended to all
   # the routes and is used to correclty identify the path to the assets.

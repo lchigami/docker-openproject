@@ -1,5 +1,5 @@
 FROM       abevoelker/ruby:old
-MAINTAINER Abe Voelker <abe@abevoelker.com>
+MAINTAINER Aris Synodinos <arissynod@gmail.com>
 
 # Set up application user 'openproject' and check out source
 RUN adduser openproject --home /home/openproject --shell /bin/bash --disabled-password --gecos "" &&\
@@ -8,6 +8,7 @@ RUN adduser openproject --home /home/openproject --shell /bin/bash --disabled-pa
     mkdir -p /var/www/openproject/docker/scripts
 
 COPY Gemfile.local /var/www/openproject/
+COPY Gemfile.plugins /var/www/openproject/
 
 RUN chown -R openproject:openproject /var/www/openproject
 

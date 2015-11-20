@@ -36,6 +36,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       d.name  = 'openproject'
       d.cmd   = ['/var/www/openproject/docker/scripts/start_application.sh']
       d.ports = ['8080:80']
+      d.env   = {
+        'GMAIL_USERNAME' => '',
+        'GMAIL_PASSWORD' => ''
+      }
 
       d.link('openproject_postgres:postgres')
       d.link('openproject_memcached:memcached')
