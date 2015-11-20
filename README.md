@@ -11,12 +11,12 @@ This is currently relying on a linked database container.  Here's an example usa
 ```
 docker run -d --name openproject-postgres-data -v /data busybox true
 docker run -d --name openproject-postgres --volumes-from openproject-postgres-data -e USER=super -e PASS=password paintedfox/postgresql
-docker run -d --name openproject --link openproject-postgres:postgres -p 8080:80 progtologist/openproject
+docker run -d --name openproject --link openproject-postgres:postgres -p 8080:80 -e GMAIL_USERNAME=test@gmail.com -e GMAIL_PASSWORD=password progtologist/openproject
 ```
 
-Wait a little while for the database setup and migrations to run.  After a short period the application should be available at http://localhost:8080.  You can check the database migration progress with `docker attach openproject`.
+Wait a little while for the database setup and migrations to run.  After a short period the application should be available at http://localhost:8080.  You can check the database migration progress with `docker attach --sig-proxy=false openproject`.
 
-At some point I'll make the container more configurable, to use environment variables rather than rely on linked containers.  Pull requests welcome!
+You can use the GMAIL\_USERNAME and GMAIL\_PASSWORD parameters to enable using gmail smtp to send emails. To use this you must enable your accounts security settings to "Allow less secure apps".
 
 ## License
 
