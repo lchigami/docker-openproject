@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/progtologist/docker-openproject.png?label=ready&title=Ready)](https://waffle.io/progtologist/docker-openproject)
 # OpenProject Dockerfile
 
 A Dockerfile that builds [OpenProject][openproject], a free and open source software for project management with a wide set of features and plugins and an active community.
