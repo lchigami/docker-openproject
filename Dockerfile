@@ -14,8 +14,7 @@ RUN chown -R openproject:openproject /var/www/openproject
 
 USER openproject
 
-RUN git config --global url."https://".insteadOf git:// &&\
-    cd /var/www/openproject &&\
+RUN cd /var/www/openproject &&\
     bundle install --without mysql mysql2 sqlite development test rmagick --path vendor/bundle &&\
     npm install
 
