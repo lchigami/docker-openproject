@@ -1,5 +1,5 @@
-FROM       progtologist/ruby
-MAINTAINER Aris Synodinos <arissynod@gmail.com>
+FROM       lchigami/ruby:stable
+MAINTAINER Lucas Chigami <lucaschigami@gmail.com>
 
 # Set up application user 'openproject' and check out source
 RUN adduser openproject --home /home/openproject --shell /bin/bash --disabled-password --gecos "" &&\

@@ -10,8 +10,13 @@ Comes with Vagrantfile for local testing; just use `vagrant up --no-parallel`.
 This is currently relying on a linked database container.  Here's an example usage (including data-only container):
 
 ```
+#This command runs the data container
 docker run -d --name openproject-postgres-data -v /data busybox true
+
+#This runs the PostgreSQL container
 docker run -d --name openproject-postgres --volumes-from openproject-postgres-data -e USER=super -e PASS=password paintedfox/postgresql
+
+#This runs the Openproject container
 docker run -d --name openproject --link openproject-postgres:postgres -p 8080:80 -e GMAIL_USERNAME=test@gmail.com -e GMAIL_PASSWORD=password progtologist/openproject
 ```
 
